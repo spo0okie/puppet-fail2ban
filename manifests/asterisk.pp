@@ -25,4 +25,11 @@ class fail2ban::asterisk {
 		value => '5060,5061,5038,8088',
 		notify => Service['fail2ban'],
 	}
+	file {'fail2ban_asterisk_filter_file':
+		path => '/etc/fail2ban/filter.d/asterisk.conf',
+		source => 'puppet:///modules/fail2ban/filter.d/asterisk.conf',
+		notify => Service['fail2ban'],
+	}
+
+
 }
