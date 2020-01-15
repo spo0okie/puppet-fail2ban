@@ -1,4 +1,5 @@
 class fail2ban {
+	include fail2ban::whitelist
 	package {'fail2ban':
 		ensure => 'installed'
 	} ->
