@@ -56,6 +56,7 @@ class fail2ban::whitelist {
 	'94.181.47.98',		#almaz_system
 	'95.78.170.226',	#chsdm
 	'87.249.215.16',	#chsdm
+	'100.200.100.0/24',	#GKB-1 voip
 
 	]
 	
