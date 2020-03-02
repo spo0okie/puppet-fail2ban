@@ -52,5 +52,21 @@ class fail2ban::apache {
 		value => 'true',
 		notify => Service['fail2ban'],
 	}
+	ini_setting {'apache_error_log':
+		path => '/etc/fail2ban/jail.conf',
+		ensure => present,
+		section => 'DEFAULT',
+		setting => 'apache_error_log',
+		value => '/var/log/httpd/*error[_.]log',
+		notify => Service['fail2ban']
+	}
+	ini_setting {'apache_access_log':
+		path => '/etc/fail2ban/jail.conf',
+		ensure => present,
+		section => 'DEFAULT',
+		setting => 'apache_access_log',
+		value => '/var/log/httpd/*access[_.]log',
+		notify => Service['fail2ban']
+	}
 }
 
