@@ -39,14 +39,5 @@ class fail2ban::asterisk {
 		source => 'puppet:///modules/fail2ban/filter.d/asterisk.conf',
 		notify => Service['fail2ban'],
 	}
-	ini_setting {'fail2ban_asterisk_action':
-		path => '/etc/fail2ban/jail.conf',
-		ensure => present,
-		section => 'asterisk',
-		setting => 'action',
-		value => '%(banaction)s[name=%(__name__)s-tcp, port="%(port)s", protocol="tcp", chain="%(chain)s", actname=%(banaction)s-tcp]
-           %(banaction)s[name=%(__name__)s-udp, port="%(port)s", protocol="udp", chain="%(chain)s", actname=%(banaction)s-udp]',
-		notify => Service['fail2ban']
-	}
 	
 }
