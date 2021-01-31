@@ -1,5 +1,6 @@
 class fail2ban::apache {
 	include fail2ban
+	$logroot = $::apache::params::logroot
 	# выявляем неудачные попытки ввода пароля
 	ini_setting {'fail2ban_apache_auth':
 		require => Package['fail2ban'],
@@ -57,7 +58,7 @@ class fail2ban::apache {
 		ensure => present,
 		section => 'DEFAULT',
 		setting => 'apache_error_log',
-		value => '/var/log/httpd/*error[_.]log',
+		value => "$logroot/*error[_\.]log",
 		notify => Service['fail2ban']
 	}
 	ini_setting {'apache_access_log':
@@ -65,7 +66,7 @@ class fail2ban::apache {
 		ensure => present,
 		section => 'DEFAULT',
 		setting => 'apache_access_log',
-		value => '/var/log/httpd/*access[_.]log',
+		value => "$logroot/*access[_\.]log",
 		notify => Service['fail2ban']
 	}
 }
