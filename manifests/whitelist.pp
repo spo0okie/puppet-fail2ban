@@ -58,6 +58,7 @@ class fail2ban::whitelist {
 	'95.78.163.127',	#azimut-chel-ER-Telekom
 	'78.108.201.218',	#azimut msk
 	'95.167.177.66',	#azimut mhk
+	'212.57.99.115',	#Аэронавиком
 	
 	# Узлы Алмаз Система
 	'94.181.47.98',		#almaz_system
