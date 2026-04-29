@@ -1,0 +1,10 @@
+[2026-04-29 12:00:01] NOTICE[1234] chan_sip.c: Registration from '"100" <sip:100@1.2.3.4>' failed for '203.0.113.10:5060' - Wrong password
+[2026-04-29 12:00:02] NOTICE[1234] chan_sip.c: Registration from '"200" <sip:200@1.2.3.4>' failed for '203.0.113.11:5060' - No matching peer found
+[2026-04-29 12:00:03] NOTICE[1234] chan_sip.c: Call from '' (UDP:203.0.113.12:5060) to extension '900111' rejected because extension not found in context 'default'
+[2026-04-29 12:00:04] NOTICE[1234] chan_sip.c: Host 203.0.113.13 failed to authenticate as '500'
+[2026-04-29 12:00:05] NOTICE[1234] chan_sip.c: No registration for peer '777' (from 203.0.113.14)
+[2026-04-29 12:00:06] NOTICE[1234] chan_sip.c: Failed to authenticate device 600@203.0.113.15
+[2026-04-29 12:00:07] SECURITY[1234] res_security_log.c: SecurityEvent="InvalidPassword",EventTV="2026-04-29T12:00:07.000+0000",Severity="Error",Service="PJSIP",EventVersion="2",AccountID="100",SessionID="abc",LocalAddress="IPV4/UDP/10.0.0.1/5060",RemoteAddress="IPV4/UDP/203.0.113.16/5060",Challenge="x",Response="y",ExpectedResponse=""
+[2026-04-29 12:00:08] NOTICE[1234] res_pjsip/pjsip_distributor.c: Request 'REGISTER' from '<sip:100@1.2.3.4>' failed for '203.0.113.17:5060' (callid: abc@host) - No matching endpoint found
+[2026-04-29 12:00:09] WARNING[1234] chan_sip.c: Timeout on 0x7f8b1c003a40 on non-critical invite transaction. 203.0.113.18:5060
+[2026-04-29 12:00:10] NOTICE[1234] chan_sip.c: hacking attempt detected '203.0.113.19'

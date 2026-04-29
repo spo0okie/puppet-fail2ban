@@ -16,3 +16,13 @@ include fail2ban
 include fail2ban::asterisk
 include fail2ban::apache
 ```
+
+## Тесты
+
+Базовая проверка конфигов в Docker (нужен docker, прокси берётся из окружения):
+
+```sh
+./tests/docker/test.sh
+```
+
+Что делает: ставит fail2ban в Debian-контейнер, копирует [files/filter.d/asterisk.conf](files/filter.d/asterisk.conf), генерирует jail.local по образу `init.pp` + `asterisk.pp`, прогоняет `fail2ban-client -t` и `fail2ban-regex` по образцу [tests/docker/samples/asterisk.log](tests/docker/samples/asterisk.log). Падает, если синтаксис конфигурации сломан или фильтр не распознаёт ни одной строки.
